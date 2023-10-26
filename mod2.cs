@@ -28,7 +28,7 @@ namespace GammaShifr
             tmpKey = tmpKey.ToUpper();
 
             for (int i = 0; i < massenge.Length; i++)
-                result += $"{bigReg[tmpString[i] ^ tmpKey[i]]}";
+                result += $"{bigReg[(tmpString[i] ^ tmpKey[i]) % bigReg.Length]}";
 
             return result;
         }
